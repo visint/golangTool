@@ -90,6 +90,16 @@ func fazhan_ok(mtype string) {
 				},
 			}
 
+		} else if v2 == "3" {
+			comExeStr := "ok"
+			result = CommandData{
+				Etype: v2,
+				Edata: CommandStats{
+					Id:     "2",
+					Params: comExeStr,
+					Method: "Reds",
+				},
+			}
 		} else {
 			fmt.Println("error no this command!")
 			return
@@ -105,9 +115,24 @@ func fazhan_ok(mtype string) {
 			fmt.Println("error no this mac!")
 		} else {
 
-			cn.Write(val)
-			cn.Read(zhi)
-			fmt.Println(string(zhi))
+			_, e1 := cn.Write(val)
+			if e1 == nil {
+				_, e2 := cn.Read(zhi)
+				if e2 == nil {
+					fmt.Println(string(zhi))
+
+				} else {
+					cn.Close()
+					delete(kvvalue, v1)
+					fmt.Println("recv error")
+				}
+
+			} else {
+				cn.Close()
+				delete(kvvalue, v1)
+				fmt.Println("socket close")
+			}
+
 		}
 	} else {
 
@@ -159,6 +184,7 @@ func qidongServer() {
 		f1, err := d1.Accept()
 		if err == nil {
 			fmt.Println("ok!", f1.RemoteAddr().String())
+			//			f1.SetDeadline(time.Second * 5)
 			mac_type_ok(f1)
 			//insertKv("1", f1)
 		}
