@@ -1,0 +1,41 @@
+jiang  PID USER       VSZ STAT COMMAND
+    1 root      1440 S    /sbin/procd
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    5 root         0 SW<  [kworker/0:0H]
+    7 root         0 SW<  [khelper]
+    8 root         0 SW   [kworker/u2:1]
+   81 root         0 SW<  [writeback]
+   83 root         0 SW<  [bioset]
+   86 root         0 SW<  [kblockd]
+   88 root         0 SW   [kswapd0]
+   89 root         0 SW   [kworker/0:1]
+   90 root         0 SW   [fsnotify_mark]
+   92 root         0 SW   [spi32766]
+  277 root         0 SW<  [deferwq]
+  290 root         0 SW   [kworker/u2:2]
+  351 root         0 SWN  [jffs2_gcd_mtd6]
+  410 root       900 S    /sbin/ubusd
+  411 root       768 S    /sbin/askfirst /bin/ash --login
+  629 root         0 SW<  [ipv6_addrconf]
+  902 root      1056 S    /sbin/logd -S 16
+  911 root      1568 S    /sbin/rpcd
+  964 root      1636 S    /sbin/netifd
+  988 root      1492 S    /usr/sbin/crond -f -c /etc/crontabs -l 5
+ 1006 root      1148 S    /usr/sbin/dropbear -F -P /var/run/dropbear.1.pid -p
+ 1055 root      1684 S    /usr/sbin/uhttpd -f -h /www -r OpenWrt -x /cgi-bin -
+ 1162 root       768 S    /usr/sbin/discover
+ 1276 root      1488 S    /usr/sbin/ntpd -n -S /usr/sbin/ntpd-hotplug -p 0.ope
+ 8822 root         0 SW   [kworker/0:2]
+ 8969 root         0 SW   [RtmpCmdQTask]
+ 8972 root         0 SW   [RtmpWscTask]
+ 9275 root      1484 S    udhcpc -p /var/run/udhcpc-eth0.2.pid -s /lib/netifd/
+ 9676 nobody    1008 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf -k -x /va
+ 9790 root      1216 S    /usr/sbin/dropbear -F -P /var/run/dropbear.1.pid -p
+10031 root      1212 S    /usr/sbin/dropbear -F -P /var/run/dropbear.1.pid -p
+10267 root      1576 S    /bin/sh /usr/sbin/freecwmp --newline --value get val
+10291 root      1484 S    ash -c ps
+10292 root      1484 R    ps
+10298 root      1476 R    grep  l 
+10397 root      1488 S    -ash
+15094 root      2084 S    /usr/sbin/freecwmpd
